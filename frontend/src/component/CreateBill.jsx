@@ -76,11 +76,11 @@ const CreateBill = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/getretailers")
+    fetch("https://shobhagoldgt.onrender.com/api/getretailers")
       .then((res) => res.json())
       .then((data) => setRetailers(data));
 
-    fetch("http://localhost:5000/api/getstocks")
+    fetch("https://shobhagoldgt.onrender.com/api/getstocks")
       .then((res) => res.json())
       .then((data) => setStocks(data));
   }, []);
@@ -124,7 +124,7 @@ const CreateBill = () => {
     setClosingBalance({ fineBalance: null, cashBalance: null }); // Reset closing balances
     if (selected) {
       try {
-        const response = await fetch(`http://localhost:5000/api/getretailerbalance/${selected.retailerId}`);
+        const response = await fetch(`https://shobhagoldgt.onrender.com/api/getretailerbalance/${selected.retailerId}`);
         const data = await response.json();
         if (response.ok) {
           setLastBalance({
@@ -223,7 +223,7 @@ const CreateBill = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/create-bill", {
+      const response = await fetch("https://shobhagoldgt.onrender.com/api/create-bill", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

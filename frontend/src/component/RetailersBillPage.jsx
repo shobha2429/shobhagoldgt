@@ -15,13 +15,13 @@ const RetailerBillsPage = () => {
     const [cashEntries, setCashEntries] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/getretailers')
+        fetch('https://shobhagoldgt.onrender.com/api/getretailers')
             .then((res) => res.json())
             .then((data) => setRetailers(data));
     }, []);
 
     const fetchBills = async () => {
-        const response = await fetch('http://localhost:5000/api/getretailerbills', {
+        const response = await fetch('https://shobhagoldgt.onrender.com/api/getretailerbills', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: selectedRetailerName }) // use name instead of id
@@ -101,7 +101,7 @@ const RetailerBillsPage = () => {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch("http://localhost:5000/api/delete-bill", {
+            const response = await fetch("https://shobhagoldgt.onrender.com/api/delete-bill", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -151,7 +151,7 @@ const RetailerBillsPage = () => {
                             const remark = e.target.remark.value;
                             if (!fineGiven || !date || !remark) return alert("Please fill all fields.");
 
-                            const response = await fetch('http://localhost:5000/api/addfinepayment', {
+                            const response = await fetch('https://shobhagoldgt.onrender.com/api/addfinepayment', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -196,7 +196,7 @@ const RetailerBillsPage = () => {
                             const remark = e.target.remark.value;
                             if (!amount || !date || !remark) return alert("Please fill all fields.");
 
-                            const response = await fetch('http://localhost:5000/api/addcashentry', {
+                            const response = await fetch('https://shobhagoldgt.onrender.com/api/addcashentry', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({

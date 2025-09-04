@@ -1,0 +1,20 @@
+{
+  "name": "shobha-silvers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "npm install --prefix ./frontend && npm run build --prefix ./frontend && npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2",
+    "path": "^0.12.7",
+    "pdfkit": "^0.17.1"
+  }
+}
